@@ -11,11 +11,11 @@ class ReceptController extends Controller
 {
     public function index()
     {
-        return DB::table('recept as r')->join('kategoria as k', 'r.kat_id', 'k.id')->select('r.*', 'k.nev as k.nev')->get();
+        return DB::table('recept as r')->join('kategoria as k', 'r.kat_id', 'k.id')->select('r.*', 'k.nev as k_nev')->get();
     }
     public function show($id)
     {
-        return DB::table('recept as r')->join('kategoria as k', 'r.kat_id', 'k.id')->where('r.id', $id)->select('r.*', 'k.nev as k.nev')->get();
+        return DB::table('recept as r')->join('kategoria as k', 'r.kat_id', 'k.id')->where('r.id', $id)->select('r.*', 'k.nev as k_nev')->get();
     }
     public function destroy($id)
     {

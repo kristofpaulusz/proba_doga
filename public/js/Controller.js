@@ -6,6 +6,7 @@ class Controller {
         const token = $('meta[name="csrf-token"]').attr("content");
         const model = new Model(token);
         model.get('/receptek', this.showTablazat)
+        $(window)
     }
     showTablazat(data) {
         new ReceptTablazat($(".tablazathelye"),data);
